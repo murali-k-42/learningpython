@@ -1,12 +1,12 @@
 def insertion_sort(input_array):
 
     for i in range(1, len(input_array)):
-        for j in range(0, i):
-            if input_array[i] < input_array[j]:
-                temp_val = input_array[i]
-                for k in reversed(range(j, i+1)):
-                    input_array[k] = input_array[k-1]
-                input_array[j] = temp_val
+        for j in reversed(range(1, i+1)):
+            if input_array[j] < input_array[j-1]:
+                temp_val = input_array[j]
+                input_array[j] = input_array[j-1]
+                input_array[j - 1] = temp_val
+            else:
                 break
     return input_array
 
