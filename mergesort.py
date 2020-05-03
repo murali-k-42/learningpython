@@ -1,9 +1,9 @@
-def merge_sort(input_array):
+def merge_sort(input_array, inv_count):
     n = len(input_array)
     C = []
     if n >= 2:
-        A = merge_sort(input_array[:int(n/2)])
-        B = merge_sort(input_array[int(n/2):])
+        A, inv_count = merge_sort(input_array[:int(n/2)], inv_count)
+        B, inv_count = merge_sort(input_array[int(n/2):], inv_count)
         i, j = 0, 0
         for k in range(0, n):
             if i < int(n/2):
@@ -19,13 +19,14 @@ def merge_sort(input_array):
                     if A[i] >= B[j]:
                         C.append(B[j])
                         j += 1
+                        inv_count += len(A[i:])
                 else:
                     C.append(B[j])
                     j += 1
     else:
         C = input_array
 
-    return C
+    return C, inv_count
 
 # Initial section will be migrated to a common input file at a later date, with user input for filename and delimiter
 
@@ -42,4 +43,5 @@ for sublist in file_dat:
         inp_arr.append(int(nums))
 
 print(inp_arr)
-print(merge_sort(inp_arr))
+sort_arr, inversions = merge_sort(inp_arr, 0)
+print(f"{sort_arr}, {inversions}")
