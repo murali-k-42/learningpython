@@ -30,7 +30,6 @@ def merge_sort(input_array, inv_count):
 
 # Initial section will be migrated to a common input file at a later date, with user input for filename and delimiter
 
-
 file_nm = "sortfil.csv"
 
 with open(file_nm, "r") as f:
