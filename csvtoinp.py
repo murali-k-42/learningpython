@@ -15,5 +15,4 @@ with open(file_str) as csv_file, open(file_str.replace("csv", "inp"), "w", newli
         inp_writer.writerow([node_num, float(row['X (m)'])*1000, float(row['Y (m)'])*1000, float(row['Z (m)'])*1000])
         node_num += 1
 
-
 print("Converted csv to inp file!")
