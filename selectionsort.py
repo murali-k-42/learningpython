@@ -15,16 +15,17 @@ def selection_sort(input_array):
 # Initial section will be migrated to a common input file at a later date, with user input for filename and delimiter
 
 
-file_nm = "sortfil.csv"
+if __name__ == '__main__':
+    file_nm = "sortfil.csv"
 
-with open(file_nm, "r") as f:
-    file_dat = f.readlines()
+    with open(file_nm, "r") as f:
+        file_dat = f.readlines()
 
-inp_arr = []
+    inp_arr = []
 
-for sublist in file_dat:
-    for nums in sublist.split(","):
-        inp_arr.append(int(nums))
+    for sublist in file_dat:
+        for nums in sublist.split(","):
+            inp_arr.append(int(nums))
 
-print(inp_arr)
-print(selection_sort(inp_arr))
+    print(inp_arr)
+    print(selection_sort(inp_arr))

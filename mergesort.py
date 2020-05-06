@@ -31,17 +31,19 @@ def merge_sort(input_array, inv_count):
 # Initial section will be migrated to a common input file at a later date, with user input for filename and delimiter
 
 
-file_nm = "sortfil.csv"
+if __name__ == '__main__':
 
-with open(file_nm, "r") as f:
-    file_dat = f.readlines()
+    file_nm = "sortfil.csv"
 
-inp_arr = []
+    with open(file_nm, "r") as f:
+        file_dat = f.readlines()
 
-for sublist in file_dat:
-    for nums in sublist.split(","):
-        inp_arr.append(int(nums))
+    inp_arr = []
 
-print(inp_arr)
-sort_arr, inversions = merge_sort(inp_arr, 0)
-print(f"{sort_arr}, {inversions}")
+    for sublist in file_dat:
+        for nums in sublist.split(","):
+            inp_arr.append(int(nums))
+
+    print(inp_arr)
+    sort_arr, inversions = merge_sort(inp_arr, 0)
+    print(f"{sort_arr}, {inversions}")

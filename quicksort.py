@@ -36,17 +36,20 @@ def quick_sort(input_array, l, r):
 
 # Initial section will be migrated to a common input file at a later date, with user input for filename and delimiter
 
-file_nm = "sortfil.csv"
 
-with open(file_nm, "r") as f:
-    file_dat = f.readlines()
+if __name__ == '__main__':
 
-inp_arr = []
+    file_nm = "sortfil.csv"
 
-for sublist in file_dat:
-    for nums in sublist.split(","):
-        inp_arr.append(int(nums))
+    with open(file_nm, "r") as f:
+        file_dat = f.readlines()
 
-print(inp_arr)
-quick_sort(inp_arr, 0, len(inp_arr)-1)
-print(inp_arr)
+    inp_arr = []
+
+    for sublist in file_dat:
+        for nums in sublist.split(","):
+            inp_arr.append(int(nums))
+
+    print(inp_arr)
+    quick_sort(inp_arr, 0, len(inp_arr)-1)
+    print(inp_arr)
