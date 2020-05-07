@@ -12,11 +12,12 @@ def selection_sort(input_array):
         input_array[min_idx] = temp_val
     return input_array
 
-# Initial section will be migrated to a common input file at a later date, with user input for filename and delimiter
-
 
 if __name__ == '__main__':
-    file_nm = "sortfil.csv"
+
+    file_nm = input("Enter csv filename with data: ")
+    if file_nm == "":
+        file_nm = "sortfil.csv"
 
     with open(file_nm, "r") as f:
         file_dat = f.readlines()

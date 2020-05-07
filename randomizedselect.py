@@ -46,7 +46,9 @@ def Rselect(input_array, l, r, k):
 
 if __name__ == '__main__':
 
-    file_nm = "sortfil1.csv"
+    file_nm = input("Enter csv filename with data: ")
+    if file_nm == "":
+        file_nm = "sortfil1.csv"
 
     with open(file_nm, "r") as f:
         file_dat = f.readlines()

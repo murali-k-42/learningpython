@@ -33,7 +33,9 @@ def merge_sort(input_array, inv_count):
 
 if __name__ == '__main__':
 
-    file_nm = "sortfil.csv"
+    file_nm = input("Enter csv filename with data: ")
+    if file_nm == "":
+      file_nm = "sortfil.csv"
 
     with open(file_nm, "r") as f:
         file_dat = f.readlines()

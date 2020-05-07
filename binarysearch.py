@@ -23,26 +23,29 @@ def binary_search(input_array, find_num, start_idx):
 
 # Initial section will be migrated to a common input file at a later date, with user input for filename and delimiter
 
+if __name__ == '__main__':
 
-file_nm = "sortedfil.csv"
+    file_nm = input("Enter csv filename with data: ")
+    if file_nm == "":
+        file_nm = "sortedfil.csv"
 
-with open(file_nm, "r") as f:
-    file_dat = f.readlines()
+    with open(file_nm, "r") as f:
+        file_dat = f.readlines()
 
-inp_arr = []
+    inp_arr = []
 
-for sublist in file_dat:
-    for nums in sublist.split(","):
-        inp_arr.append(int(nums))
+    for sublist in file_dat:
+        for nums in sublist.split(","):
+            inp_arr.append(int(nums))
 
-print(inp_arr)
-num = input("Enter number to search for: ")
+    print(inp_arr)
+    num = input("Enter number to search for: ")
 
-idx, found = binary_search(inp_arr, int(num), 0)
+    idx, found = binary_search(inp_arr, int(num), 0)
 
-if found:
-    print(f"{num} is found at location {idx} in the input array")
-else:
-    print(f"{num} is not found in array, closest match at location {idx} is {inp_arr[idx]}")
+    if found:
+        print(f"{num} is found at location {idx} in the input array")
+    else:
+        print(f"{num} is not found in array, closest match at location {idx} is {inp_arr[idx]}")
 
 
