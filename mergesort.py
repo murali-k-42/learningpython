@@ -1,4 +1,7 @@
 def merge_sort(input_array, inv_count):
+
+    if inv_count is None:
+        inv_count = 0
     n = len(input_array)
     C = []
     if n >= 2:
